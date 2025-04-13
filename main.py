@@ -30,17 +30,24 @@ def attempt(limit, query="", i=0):
     print(i, new_query)
     i += 1
 
-    if i < limit and new_query != "/wiki/Philosophy":
+    if i < limit and (new_query != "/wiki/Philosophy" or new_query != "/wiki/Philosophical":
         time.sleep(1)
         return attempt(limit, new_query, i)
 
     elif i >= limit:
         print("NOT FOUND")
-        return 0
-
-    else:
-        print("FOUND AFTER", i, "ATTEMPTS")
         return 1
 
+    else:
+        print("-------------------")
+        print("FOUND AFTER", i, "ATTEMPTS")
+        return 0
 
-    attempt(20)
+n = 10
+m = 0
+
+for i in range(n):
+    if attempt(20) == 0:
+        m += 1
+
+print("\n Rate:", m/n*100, "%")
