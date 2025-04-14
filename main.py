@@ -63,6 +63,6 @@ for i in range(n):
     data.append(arr)
     arr = []
 
-with open("collection.csv", mode="w", newline="") as f:
+with open("collection.csv", mode="a", newline="") as f:
     w = writer(f)
     w.writerows(data)
